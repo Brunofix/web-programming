@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boje.css" >  
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+    <title>Cetvrti zad</title>
+
+    <script>
+        $(document).ready(function () {
+                $('#zelena').click(function () {
+                    $('ol').first().addClass('zelena');
+                });
+
+                $('img').click(function () {
+                    $(this).fadeOut();
+                }).hover(
+                    function () {
+                        $(this).css('border', '1px solid black');
+                    },
+                    function () {
+                        $(this).css('border', 'none');
+                    }
+                );
+
+            $('#abrakadabra').click(function () {
+                $('img:eq(0)').fadeToggle('fast');
+                $('img:eq(1)').fadeToggle('slow');
+                $('img:eq(2)').fadeToggle(5000);
+            });
+        });
+    
+    </script>
+</head>
+<body>
+    <p>Najbolje pop pjesme:</p>
+    <ol>
+        <li>Toxic by Britney Spears</li>
+        <li>Rolling in the Deep by Adele</li>
+        <li>Single Ladies by Beyoncé</li>
+      </ol>
+      <p>Najbolji filmovi u automobilskom zanru:</p>
+      <ol>
+        <li>Ford v Ferrari</li>
+        <li>Rush </li>
+        <li>Cars</li>
+      </ol>
+
+      <img src="C:\Users\bruno\Desktop\web programiranje\lv5\istockphoto-1140063009-612x612.jpg" alt="Slika 1">
+      <img src="C:\Users\bruno\Desktop\web programiranje\lv5\360_F_106612949_RldvT7YiQm1t7acfDYsYyjHnPuPhnDu5.jpg" alt="Slika 2">
+      <img src="C:\Users\bruno\Desktop\web programiranje\lv5\EC22737C-E4AA-788E-F094628EC9F448C9.jpg" alt="Slika 3">
+  
+      <button id="zelena">zelena</button>
+      <button id="abrakadabra">Abrakadabra</button>
+</body>
+</html>
