@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validacija</title>
+  <link rel="stylesheet" type="text/css" href="css.css" >
+  <script>
+    function pozdrav(){
+        for (let i=5;i>0; i--){
+            alert("Jos preostaje "+ i + " upozorenja.");
+        }
+    }
+    function provjeri() {
+    
+      var imeVrijednost = document.getElementById("ime").value;
+      var emailVrijednost = document.getElementById("email").value;
+    
+    if (imeVrijednost === "" || emailVrijednost === "") {
+        alert("Unesite ime i e-mail adresu.");
+      } else {
+        alert("Podaci su uspješno uneseni!");
+
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Validacija</h1>
+
+  <form>
+    <label for="ime">Ime:</label>
+    <input type="text" id="ime" name="ime"><br><br>
+
+    <label for="tekst">Podrucje teksta:</label><br>
+    <textarea id="tekst" name="tekst" rows="10" cols="50"></textarea><br><br>
+
+    <label for="broj">Unesi broj:</label>
+    <input type="text" id="broj" name="broj"><br><br>
+
+    <button type="button">Gumb</button>
+    <button type="button">Gumb 2</button>
+    <button type="button">Gumb 3</button><br><br>
+
+    <div id="ispisRezultata"></div><br><br>
+
+    <label for="email">E-mail adresa:</label>
+    <input type="text" id="email" name="email"><br><br>
+    <button type="button" ondblclick="pozdrav()">Pozdrav</button>
+    <button type="button" onclick="provjeri()">Provjeri</button>
+  </form>
+</body>
+</html>

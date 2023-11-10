@@ -1,0 +1,30 @@
+#Lista {
+    margin: 20px;
+    list-style-type: none;
+    border: 2px solid #cf0d0d;
+    padding: 6px 15px;
+    margin: 8px;
+}
+
+#Lista li {
+    display: inline;
+}
+
+#Lista li a {
+    text-decoration: none;
+    border: 2px solid blueviolet;
+    background-color: #e1169d;
+    padding: 6px 15px;
+    margin: 8px;
+}
+
+#Lista li a:hover {
+    background-color: #2f00ff; 
+    border-color: #ff006f;  
+}
+
+#Lista li a:active {
+    background-color: #008000; 
+    border-color: #f80000;    
+    color: #ff0000;         
+}

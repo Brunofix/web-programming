@@ -1,0 +1,25 @@
+div.content {
+    display: flex;
+}
+
+div.content aside {
+    display: inline-block;
+    width: 40%;
+}
+
+.articles {
+    width: 49%;
+}
+
+div.content aside {
+    width: fit-content;
+    float:right;
+}
+
+aside figcaption {
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid black;
+
+}

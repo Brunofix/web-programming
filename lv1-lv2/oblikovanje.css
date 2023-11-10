@@ -1,0 +1,26 @@
+p{
+    text-align: right;
+    font-style: italic;
+    font-family: Comic Sans;
+    color: blue ;
+}
+.prvi-odlomak{
+    text-align: center;
+    color: red;
+    font-size: 110%;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+#odlomak2{
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+    color: red;
+}
+a{
+    color: gray;
+}
+a:hover{
+    color:yellow;
+}
