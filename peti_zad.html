@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Najgluplja igra ikada</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .polje {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            display: inline-block;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .slika {
+            width: 90px;
+            height: 90px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #crvenaSlika {
+            background-color: red;
+        }
+
+        #crnaSlika {
+            background-color: black;
+        }
+
+        .bojaTekst {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Najgluplja igra ikada</h1>
+    <div class="polje" id="crvenoPolje">
+        <div class="bojaTekst">Crvena</div>
+    </div>
+    <div class="polje" id="crnoPolje">
+        <div class="bojaTekst">Crna</div>
+    </div>
+    <div class="slika" id="crvenaSlika" style="background-color: red;"></div>
+    <div class="slika" id="crnaSlika" style="background-color: black;"></div>
+</body>
+</html>
+
+Script
+$(document).ready(function() {
+    $('.slika').draggable({
+        revert: true,
+        start: function(event, ui) {
+            $(this).data('pos', ui.helper.offset());
+        }
+    });
+
+    $('.polje').droppable({
+        accept: '.slika',
+        drop: function(event, ui) {
+            var poljeId = $(this).attr('id');
+            var slikaId = ui.helper.attr('id');
+
+            if ((poljeId === 'crvenoPolje' && slikaId === 'crvenaSlika') || 
+                (poljeId === 'crnoPolje' && slikaId === 'crnaSlika')) {
+                alert('Točno! Slika je na pravom mjestu.');
+                ui.helper.draggable('option', 'revert', false);
+            } else {
+                alert('Netočno! Pokušajte ponovno.');
+                ui.helper.offset($(ui.helper.data('pos')));
+            }
+        }
+    });
+});
+
